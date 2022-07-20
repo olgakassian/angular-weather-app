@@ -1,0 +1,50 @@
+<div class="weather-info" *ngIf="weather$ | async as temp">
+  <div class="row">
+    <div class="col-6">
+      <h1>
+        {{ temp.name }}
+      </h1>
+      <ul>
+        <li>
+          <strong>
+            <span class="week-day">, </span>
+            <span class="day-time"> </span> |
+            <span class="description">
+              {{ temp.weather[0].description }}
+            </span>
+          </strong>
+        </li>
+        <li>
+          Humidity: <span> {{ temp.main.humidity }}</span
+          >%
+        </li>
+        <li>
+          Wind:
+          <span>
+            {{ temp.wind.speed }}
+          </span>
+          k m/h
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-6">
+      <div class="float-right">
+        <img
+          [src]="
+            'https://openweathermap.org/img/wn/' +
+            temp.weather[0].icon +
+            '@2x.png'
+          "
+          alt=""
+          width="80px"
+          class="current-weather-icon"
+          id="icon"
+        />
+        <span class="temperature"> {{ Math.round(temp.main.temp) }} </span>
+        <span class="unit"> ºC</span>
+        <!-- <pre> {{ weather$ | async | json }} </pre> -->
+      </div>
+    </div>
+  </div>
+</div>
