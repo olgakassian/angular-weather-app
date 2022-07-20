@@ -7,9 +7,18 @@ import { FormBuilder, FormControl } from '@angular/forms';
   styleUrls: ['./form.component.scss'],
 })
 export class FormComponent implements OnInit {
-  //   @Output() city = new EventListener<string[]>();
-  enteredCity = new FormControl();
+@Output()
+
+  city = new FormControl();
+
   constructor(private fb: FormBuilder) {}
-  ngOnInit(): void {}
-  //   submitCity(city: string) {}
+
+  ngOnInit(): void {
+    // this.city = this.fb.control({});
+  }
+
+  submitCity() {
+    let enteredCity = this.city.value;
+    console.log(enteredCity);
+  }
 }

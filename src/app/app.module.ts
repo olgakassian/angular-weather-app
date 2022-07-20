@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 import { FormComponent } from './form/form.component';
 import { CurrentWeatherComponent } from './current-weather/current-weather.component';
 import { ForecastComponent } from './forecast/forecast.component';
+import { DateComponent } from './date/date.component';
 
 @NgModule({
-  declarations: [AppComponent, FormComponent, CurrentWeatherComponent, ForecastComponent],
+  declarations: [AppComponent, FormComponent, CurrentWeatherComponent, ForecastComponent, DateComponent],
   imports: [BrowserModule, HttpClientModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
