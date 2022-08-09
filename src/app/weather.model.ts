@@ -1,4 +1,8 @@
 export interface Weather {
+  coord: {
+    lon: number;
+    lat: number;
+  }
   name: string;
   wind: {
     speed: number;

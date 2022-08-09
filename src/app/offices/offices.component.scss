@@ -1,0 +1,29 @@
+h3{
+ font-size: 10px;
+ font-weight: 700;
+ color: blue;
+}
+
+
+.valtech-office-list{
+    text-align: justify;
+    padding: 20px 0px 20px 0px;
+    color: gray;
+}
+
+span:hover{
+    text-decoration: underline blue 4px;
+    cursor: pointer;
+}
+
+.selected{
+    text-decoration: underline blue 4px;
+    color: blue;
+    font-weight: 500;
+}
+
+.details{
+padding: 15px 0px 15px 0px;
+font-size: 15px;
+font-weight: 300;
+}

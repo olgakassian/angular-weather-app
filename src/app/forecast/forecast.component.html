@@ -1,3 +1,25 @@
 <div class="weather-info">
-  <div class="weather-forecast">FORECAST SOON</div>
+  <div class="weather-forecast row">
+    <ng-container *ngIf=" forecast$ | async as main ">
+    <ng-container *ngFor = "let daily of main.daily">
+    <div class="col-2 daily-forecast-section">
+      <div class="weather-forecast-date" > {{  convertToDate(daily.dt) | date: 'EEE'}} </div>
+      <img
+        class="forecast-icon"
+        [src]="'https://openweathermap.org/img/wn/' +
+        daily.weather[0].icon +
+        '@2x.png'"
+        alt=""
+        width="42px"
+      />
+      <div class="weather-forecast-temperatures">        
+        <span class="max-temp">{{ daily.temp.min |number: '1.0-0' }}º </span>
+        <span class="min-temp">{{ daily.temp.max | number: '1.0-0' }}º</span>
+      </div>
+    </div>
+  </ng-container>
+  </ng-container>
+  </div>
 </div>
+
+

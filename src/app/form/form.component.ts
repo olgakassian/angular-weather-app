@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormControl } from '@angular/forms';
 
 @Component({
@@ -7,18 +7,19 @@ import { FormBuilder, FormControl } from '@angular/forms';
   styleUrls: ['./form.component.scss'],
 })
 export class FormComponent implements OnInit {
-@Output()
+@Output() newCity = new EventEmitter<string>();
 
+  enteredCity: string;
   city = new FormControl();
 
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
-    // this.city = this.fb.control({});
+    
   }
 
   submitCity() {
-    let enteredCity = this.city.value;
-    console.log(enteredCity);
+    this.newCity.emit(this.city.value);
   }
+
 }

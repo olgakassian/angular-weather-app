@@ -7,16 +7,14 @@
       <ul>
         <li>
           <strong>
-            <span class="week-day">, </span>
-            <span class="day-time"> </span> |
+           <app-date></app-date>|
             <span class="description">
               {{ temp.weather[0].description }}
             </span>
           </strong>
         </li>
         <li>
-          Humidity: <span> {{ temp.main.humidity }}</span
-          >%
+          Humidity: <span> {{ temp.main.humidity }}</span>%
         </li>
         <li>
           Wind:
@@ -47,4 +45,5 @@
       </div>
     </div>
   </div>
+  <app-forecast [weather]="temp"></app-forecast>
 </div>

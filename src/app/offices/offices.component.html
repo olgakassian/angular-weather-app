@@ -1,0 +1,17 @@
+<div class="valtech-office-list" >
+    <h3 >
+        CONTACT VALTECH_ AROUND THE WORLD
+    </h3>
+    
+    <ng-container *ngFor="let office of officesValtech">
+    <span (click)="onSelect(office)" [class.selected]="office === selectedOffice">
+    {{office.name | uppercase}} 
+    </span>
+    </ng-container>
+    <div class="details" *ngIf="selectedOffice">
+      
+
+        {{ selectedOffice.offices[0].email }}
+        
+    </div>
+</div>

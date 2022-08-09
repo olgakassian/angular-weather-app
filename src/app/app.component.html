@@ -7,17 +7,20 @@
       class="shecodes-logo"
     />
     <!-- Input Form -->
-    <app-form></app-form>
+    <app-form (newCity)="updateCityName($event)"></app-form>
     <hr />
     <!-- Section with Current Weather Information -->
-    <app-current-weather></app-current-weather>
+   <app-current-weather [updatedCity]="city"></app-current-weather>
     <!-- Link to Open Source Code -->
-    <app-forecast></app-forecast>
+    
     <hr />
+<app-offices></app-offices>
+<hr />
     <small>
       <a href="https://github.com/olgakassian/weather-app" target="_blank">
         Open-source code</a
       >, by Olga Kassian
     </small>
   </div>
+
 </div>
